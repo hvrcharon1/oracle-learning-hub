@@ -78,12 +78,52 @@ const learningModules = [
     officialDocLink: 'https://docs.oracle.com/en/database/oracle/oracle-database/26/ai.html',
   },
   {
-    title: 'Converged Database Architecture',
+    title: 'Converged Database',
     description: 'Understand Oracle 26ai converged database capabilities',
     category: '26ai',
     subcategory: 'converged-db',
-    content: 'Oracle 26ai provides a converged database supporting JSON, Graph, Spatial, and Vector data...',
+    content: 'Oracle 26ai converged database supports multiple data types and workloads...',
     officialDocLink: 'https://docs.oracle.com/en/database/oracle/oracle-database/26/',
+  },
+  {
+    title: 'Oracle Health Cloud Overview',
+    description: 'Introduction to Oracle Health Cloud for healthcare organizations',
+    category: 'healthcare',
+    subcategory: 'overview',
+    content: 'Oracle Health Cloud is a comprehensive suite of cloud-based healthcare applications designed for healthcare organizations to improve patient care, operational efficiency, and clinical outcomes. It integrates EHR, billing, supply chain, and analytics capabilities.',
+    officialDocLink: 'https://www.oracle.com/healthcare/health-cloud/',
+  },
+  {
+    title: 'Oracle Clinical Applications',
+    description: 'Learn about Oracle Clinical modules for healthcare providers',
+    category: 'healthcare',
+    subcategory: 'clinical',
+    content: 'Oracle Clinical applications provide comprehensive clinical documentation, patient management, and care coordination tools. Features include electronic health records (EHR), clinical decision support, and patient engagement capabilities.',
+    officialDocLink: 'https://www.oracle.com/healthcare/clinical/',
+  },
+  {
+    title: 'Healthcare Revenue Cycle Management',
+    description: 'Explore revenue cycle management solutions in Oracle Health Cloud',
+    category: 'healthcare',
+    subcategory: 'revenue-cycle',
+    content: 'Revenue Cycle Management (RCM) in Oracle Health Cloud streamlines billing, claims management, and financial operations. It ensures accurate coding, timely claims submission, and improved cash flow for healthcare organizations.',
+    officialDocLink: 'https://www.oracle.com/healthcare/revenue-cycle/',
+  },
+  {
+    title: 'Healthcare Supply Chain Management',
+    description: 'Manage healthcare supply chain with Oracle solutions',
+    category: 'healthcare',
+    subcategory: 'supply-chain',
+    content: 'Oracle Healthcare Supply Chain Management optimizes inventory, procurement, and distribution of medical supplies and pharmaceuticals. It reduces costs, improves availability, and ensures compliance with healthcare regulations.',
+    officialDocLink: 'https://www.oracle.com/healthcare/supply-chain/',
+  },
+  {
+    title: 'AI in Healthcare - Predictive Analytics',
+    description: 'Discover AI and predictive analytics in Oracle Health Cloud',
+    category: 'healthcare',
+    subcategory: 'ai-analytics',
+    content: 'Oracle Health Cloud leverages AI and machine learning for predictive analytics, patient risk stratification, and clinical insights. These capabilities help healthcare providers identify high-risk patients and improve outcomes.',
+    officialDocLink: 'https://www.oracle.com/healthcare/ai-analytics/',
   },
 ];
 
@@ -124,6 +164,24 @@ const resources = [
     url: 'https://blogs.oracle.com/cloud-infrastructure/',
     author: 'Oracle',
     publishedDate: new Date('2026-04-13'),
+  },
+  {
+    title: 'Oracle Health Cloud Documentation',
+    description: 'Complete documentation for Oracle Health Cloud implementation',
+    category: 'healthcare',
+    resourceType: 'documentation',
+    url: 'https://docs.oracle.com/en/cloud/saas/health-cloud/',
+    author: 'Oracle',
+    publishedDate: new Date('2026-04-12'),
+  },
+  {
+    title: 'Healthcare AI and Machine Learning Guide',
+    description: 'Guide to implementing AI/ML in healthcare with Oracle',
+    category: 'healthcare',
+    resourceType: 'pdf',
+    url: 'https://www.oracle.com/a/ocom/docs/healthcare/oracle-healthcare-ai-ml-guide.pdf',
+    author: 'Oracle',
+    publishedDate: new Date('2026-04-10'),
   },
 ];
 
@@ -183,6 +241,24 @@ const newsFeed = [
     publishedDate: new Date('2026-03-25'),
     content: 'Detailed performance benchmarks showing the significant improvements in Oracle Database 26ai over previous versions, including AI-specific workloads.',
   },
+  {
+    title: 'Oracle Health Cloud Transforms Healthcare Delivery',
+    description: 'How Oracle Health Cloud is revolutionizing healthcare operations',
+    category: 'healthcare',
+    sourceType: 'blog',
+    url: 'https://blogs.oracle.com/healthcare/oracle-health-cloud-transforms-delivery/',
+    publishedDate: new Date('2026-04-12'),
+    content: 'Oracle Health Cloud enables healthcare organizations to streamline operations, improve patient care, and reduce costs through integrated clinical, financial, and supply chain management.',
+  },
+  {
+    title: 'AI-Powered Clinical Decision Support in Oracle Health',
+    description: 'Leveraging AI for better clinical outcomes',
+    category: 'healthcare',
+    sourceType: 'blog',
+    url: 'https://blogs.oracle.com/healthcare/ai-clinical-decision-support/',
+    publishedDate: new Date('2026-04-08'),
+    content: 'Discover how Oracle Health Cloud uses AI and machine learning to provide clinical decision support, helping healthcare providers make informed decisions and improve patient outcomes.',
+  },
 ];
 
 // Diagrams Data
@@ -206,6 +282,20 @@ const diagrams = [
     description: 'Oracle 26ai converged database supporting multiple data types',
     category: 'architecture',
     svgContent: '<svg viewBox="0 0 800 500"><text x="400" y="40" text-anchor="middle" font-size="20" font-weight="bold" fill="#1f2937">Oracle 26ai Converged Database</text><g><rect x="100" y="100" width="600" height="300" fill="none" stroke="#1f2937" stroke-width="2" rx="10"/><text x="400" y="130" text-anchor="middle" font-size="16" font-weight="bold" fill="#1f2937">Unified Database Engine</text><g><rect x="130" y="160" width="100" height="60" fill="#dbeafe" stroke="#0284c7" stroke-width="2"/><text x="180" y="195" text-anchor="middle" font-size="12" fill="#1f2937">Relational</text></g><g><rect x="270" y="160" width="100" height="60" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/><text x="320" y="195" text-anchor="middle" font-size="12" fill="#1f2937">JSON</text></g><g><rect x="410" y="160" width="100" height="60" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/><text x="460" y="195" text-anchor="middle" font-size="12" fill="#1f2937">Graph</text></g><g><rect x="550" y="160" width="100" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="600" y="195" text-anchor="middle" font-size="12" fill="#1f2937">Vector</text></g><g><rect x="130" y="260" width="520" height="60" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/><text x="390" y="295" text-anchor="middle" font-size="12" fill="#1f2937">Spatial, Temporal, and AI/ML Capabilities</text></g></g></svg>',
+    imageUrl: null,
+  },
+  {
+    title: 'Oracle Health Cloud Architecture',
+    description: 'Integrated architecture of Oracle Health Cloud components',
+    category: 'healthcare',
+    svgContent: '<svg viewBox="0 0 800 600"><text x="400" y="40" text-anchor="middle" font-size="20" font-weight="bold" fill="#1f2937">Oracle Health Cloud Architecture</text><g><rect x="50" y="80" width="700" height="480" fill="none" stroke="#1f2937" stroke-width="2" rx="10"/><text x="400" y="110" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2937">Integrated Healthcare Platform</text><g><rect x="80" y="140" width="140" height="70" fill="#dbeafe" stroke="#0284c7" stroke-width="2"/><text x="150" y="175" text-anchor="middle" font-size="12" fill="#1f2937">Clinical</text><text x="150" y="195" text-anchor="middle" font-size="10" fill="#1f2937">EHR & Care</text></g><g><rect x="250" y="140" width="140" height="70" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/><text x="320" y="175" text-anchor="middle" font-size="12" fill="#1f2937">Financial</text><text x="320" y="195" text-anchor="middle" font-size="10" fill="#1f2937">RCM & Billing</text></g><g><rect x="420" y="140" width="140" height="70" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/><text x="490" y="175" text-anchor="middle" font-size="12" fill="#1f2937">Supply Chain</text><text x="490" y="195" text-anchor="middle" font-size="10" fill="#1f2937">Inventory</text></g><g><rect x="590" y="140" width="140" height="70" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="660" y="175" text-anchor="middle" font-size="12" fill="#1f2937">Analytics</text><text x="660" y="195" text-anchor="middle" font-size="10" fill="#1f2937">AI & Insights</text></g><g><rect x="80" y="280" width="650" height="60" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/><text x="405" y="315" text-anchor="middle" font-size="12" fill="#1f2937">Unified Data Platform with AI/ML Capabilities</text></g><g><rect x="80" y="400" width="650" height="60" fill="#f3e8ff" stroke="#a855f7" stroke-width="2"/><text x="405" y="435" text-anchor="middle" font-size="12" fill="#1f2937">Patient Engagement & Interoperability Layer</text></g></g></svg>',
+    imageUrl: null,
+  },
+  {
+    title: 'Healthcare Revenue Cycle Flow',
+    description: 'Revenue cycle management process in Oracle Health Cloud',
+    category: 'healthcare',
+    svgContent: '<svg viewBox="0 0 900 400"><text x="450" y="40" text-anchor="middle" font-size="20" font-weight="bold" fill="#1f2937">Healthcare Revenue Cycle Management</text><g><rect x="30" y="80" width="100" height="60" fill="#dbeafe" stroke="#0284c7" stroke-width="2"/><text x="80" y="115" text-anchor="middle" font-size="11" fill="#1f2937">Patient Visit</text></g><path d="M 130 110 L 170 110" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/><g><rect x="170" y="80" width="100" height="60" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/><text x="220" y="115" text-anchor="middle" font-size="11" fill="#1f2937">Coding</text></g><path d="M 270 110 L 310 110" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/><g><rect x="310" y="80" width="100" height="60" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/><text x="360" y="115" text-anchor="middle" font-size="11" fill="#1f2937">Billing</text></g><path d="M 410 110 L 450 110" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/><g><rect x="450" y="80" width="100" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="500" y="115" text-anchor="middle" font-size="11" fill="#1f2937">Claims</text></g><path d="M 550 110 L 590 110" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/><g><rect x="590" y="80" width="100" height="60" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/><text x="640" y="115" text-anchor="middle" font-size="11" fill="#1f2937">Adjudication</text></g><path d="M 690 110 L 730 110" stroke="#6b7280" stroke-width="2" marker-end="url(#arrowhead)"/><g><rect x="730" y="80" width="100" height="60" fill="#f3e8ff" stroke="#a855f7" stroke-width="2"/><text x="780" y="115" text-anchor="middle" font-size="11" fill="#1f2937">Payment</text></g><g><rect x="30" y="220" width="800" height="80" fill="#f0fdf4" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,5"/><text x="430" y="245" text-anchor="middle" font-size="12" font-weight="bold" fill="#1f2937">Oracle Health Cloud Analytics & Monitoring</text><text x="430" y="270" text-anchor="middle" font-size="10" fill="#1f2937">Real-time tracking, compliance monitoring, and performance metrics</text><text x="430" y="290" text-anchor="middle" font-size="10" fill="#1f2937">AI-powered insights for revenue optimization and denial management</text></g><defs><marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><polygon points="0 0, 10 5, 0 10" fill="#6b7280"/></marker></defs></svg>',
     imageUrl: null,
   },
 ];
@@ -256,4 +346,9 @@ try {
   await connection.end();
 }
 
-console.log('\n✓ All data seeded successfully!');
+  console.log('\n✓ All data seeded successfully!');
+  console.log('\nContent Summary:');
+  console.log('  Healthcare Modules:', learningModules.filter(m => m.category === 'healthcare').length);
+  console.log('  Healthcare Resources:', resources.filter(r => r.category === 'healthcare').length);
+  console.log('  Healthcare Diagrams:', diagrams.filter(d => d.category === 'healthcare').length);
+  console.log('  Healthcare News:', newsFeed.filter(n => n.category === 'healthcare').length);

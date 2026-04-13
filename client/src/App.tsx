@@ -7,6 +7,7 @@ import Oracle26ai from "@/pages/Oracle26ai";
 import Resources from "@/pages/Resources";
 import DiagramGallery from "@/pages/DiagramGallery";
 import NewsFeed from "@/pages/NewsFeed";
+import Healthcare from "@/pages/Healthcare";
 import ChatWidget from "@/components/ChatWidget";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -21,10 +22,10 @@ function Router() {
       <Route path={"/diagrams"} component={DiagramGallery} />
       <Route path={"/news-feed"} component={NewsFeed} />
       <Route path={"/resources"} component={Resources} />
+      <Route path={"/healthcare"} component={Healthcare} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+      <Route component={NotFound} />    </Switch>
   );
 }
 

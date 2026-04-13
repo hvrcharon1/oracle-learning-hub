@@ -12,6 +12,7 @@ import {
   LogOut,
   Menu,
   X,
+  Heart,
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
@@ -66,6 +67,12 @@ export default function OracleDashboardLayout({
       label: "Resources",
       icon: FileText,
       href: "/resources",
+    },
+    {
+      id: "healthcare",
+      label: "Healthcare",
+      icon: Heart,
+      href: "/healthcare",
     },
   ];
 
