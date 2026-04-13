@@ -9,7 +9,7 @@ import { trpc } from "@/lib/trpc";
 
 export default function Dashboard() {
   const [featuredNews, setFeaturedNews] = useState<any[]>([]);
-  const newsQuery = trpc.news.feed.useQuery({ limit: 5 });
+  const newsQuery = trpc.news.feed.useQuery({ limit: 5 }) as any;
 
   useEffect(() => {
     if (newsQuery.data) {
@@ -54,6 +54,15 @@ export default function Dashboard() {
       href: "/resources",
       stats: "50+ resources",
     },
+    {
+      id: "healthcare",
+      title: "Healthcare Cloud",
+      description: "Oracle Health Cloud for healthcare organizations",
+      icon: "🏥",
+      color: "from-red-500 to-red-600",
+      href: "/healthcare",
+      stats: "5 modules",
+    },
   ];
 
   return (
@@ -65,14 +74,14 @@ export default function Dashboard() {
             Welcome to Oracle Learning Hub
           </h1>
           <p className="text-lg text-slate-600">
-            Master Oracle Fusion Applications and Oracle 26ai Database with comprehensive learning resources
+            Master Oracle Fusion Applications, Oracle 26ai Database, and Healthcare Cloud with comprehensive learning resources
           </p>
         </div>
 
         {/* Featured Topics Grid */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-6">Featured Topics</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredTopics.map((topic) => (
               <Link key={topic.id} href={topic.href}>
                 <a className="group">
