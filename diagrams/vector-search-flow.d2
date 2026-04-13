@@ -1,0 +1,58 @@
+title: Oracle 26ai Vector Search Process Flow
+
+direction: right
+
+UserQuery: {
+  label: User Query
+  style: {
+    fill: "#dcfce7"
+    stroke: "#22c55e"
+  }
+}
+
+TextEmbedding: {
+  label: Text Embedding
+  style: {
+    fill: "#fef3c7"
+    stroke: "#f59e0b"
+  }
+}
+
+VectorRepresentation: {
+  label: Vector Representation
+  style: {
+    fill: "#e0e7ff"
+    stroke: "#6366f1"
+  }
+}
+
+VectorDatabaseIndex: {
+  label: Vector Database Index
+  shape: cylinder
+  style: {
+    fill: "#d1d5db"
+    stroke: "#374151"
+  }
+}
+
+SimilarityCalculation: {
+  label: Similarity Calculation
+  style: {
+    fill: "#fce7f3"
+    stroke: "#ec4899"
+  }
+}
+
+RankedResults: {
+  label: Ranked Results
+  style: {
+    fill: "#dbeafe"
+    stroke: "#0284c7"
+  }
+}
+
+UserQuery -> TextEmbedding: Convert to vector
+TextEmbedding -> VectorRepresentation: Generate embeddings
+VectorRepresentation -> VectorDatabaseIndex: Search index
+VectorDatabaseIndex -> SimilarityCalculation: Find similar vectors
+SimilarityCalculation -> RankedResults: Return top matches

@@ -1,0 +1,80 @@
+title: Oracle 26ai Converged Database Architecture
+
+direction: down
+
+ApplicationLayer: {
+  label: Application Layer
+  style: {
+    fill: "#dbeafe"
+    stroke: "#0284c7"
+  }
+}
+
+UnifiedDatabaseEngine: {
+  label: Unified Database Engine
+  style: {
+    fill: "#f3e8ff"
+    stroke: "#a855f7"
+  }
+}
+
+Relational: {
+  style: {
+    fill: "#fce7f3"
+    stroke: "#ec4899"
+  }
+}
+
+JSON: {
+  style: {
+    fill: "#dcfce7"
+    stroke: "#22c55e"
+  }
+}
+
+Graph: {
+  style: {
+    fill: "#fef3c7"
+    stroke: "#f59e0b"
+  }
+}
+
+Vector: {
+  style: {
+    fill: "#e0e7ff"
+    stroke: "#6366f1"
+  }
+}
+
+Spatial: {
+  style: {
+    fill: "#fee2e2"
+    stroke: "#dc2626"
+  }
+}
+
+AIMLCapabilities: {
+  label: AI/ML Capabilities
+  style: {
+    fill: "#dcfce7"
+    stroke: "#22c55e"
+  }
+}
+
+StorageEngine: {
+  label: Storage Engine
+  shape: cylinder
+  style: {
+    fill: "#d1d5db"
+    stroke: "#374151"
+  }
+}
+
+ApplicationLayer -> UnifiedDatabaseEngine
+UnifiedDatabaseEngine -> Relational
+UnifiedDatabaseEngine -> JSON
+UnifiedDatabaseEngine -> Graph
+UnifiedDatabaseEngine -> Vector
+UnifiedDatabaseEngine -> Spatial
+UnifiedDatabaseEngine -> AIMLCapabilities
+UnifiedDatabaseEngine -> StorageEngine
