@@ -1,6 +1,15 @@
 import mysql from 'mysql2/promise';
+import { config } from 'dotenv';
+
+config(); // Load environment variables from .env file
+
+if (!process.env.DATABASE_URL) {
+  console.error('✗ DATABASE_URL environment variable is not set');
+  process.exit(1);
+}
 
 const connection = await mysql.createConnection(process.env.DATABASE_URL);
+
 
 // Learning Modules Data
 const learningModules = [
@@ -118,6 +127,64 @@ const resources = [
   },
 ];
 
+// News Feed Data
+const newsFeed = [
+  {
+    title: 'Oracle Announces Oracle Database 26ai - AI Made Simple for Enterprise',
+    description: 'Oracle introduces the next generation of database technology with built-in AI capabilities',
+    category: '26ai',
+    sourceType: 'press-release',
+    url: 'https://www.oracle.com/news/announcement/oracle-database-26ai-ai-made-simple-for-enterprise/',
+    publishedDate: new Date('2026-04-10'),
+    content: 'Oracle has announced Oracle Database 26ai, the next generation of database technology with built-in AI capabilities. This revolutionary database combines the power of AI with enterprise-grade database features.',
+  },
+  {
+    title: 'Oracle Fusion Applications Cloud Service Updates',
+    description: 'Latest enhancements and new features in Oracle Fusion Applications',
+    category: 'fusion',
+    sourceType: 'blog',
+    url: 'https://blogs.oracle.com/applications/oracle-fusion-applications-updates/',
+    publishedDate: new Date('2026-04-08'),
+    content: 'Oracle Fusion Applications continues to evolve with new features and enhancements. The latest updates include improved user experience, enhanced analytics, and better integration capabilities.',
+  },
+  {
+    title: 'AI Vector Search in Oracle Database 26ai',
+    description: 'Explore how AI vector search enables semantic search and similarity matching',
+    category: '26ai',
+    sourceType: 'blog',
+    url: 'https://blogs.oracle.com/database/ai-vector-search-oracle-database-26ai/',
+    publishedDate: new Date('2026-04-05'),
+    content: 'Vector search is a powerful new capability in Oracle Database 26ai that enables semantic search and similarity matching. Learn how to leverage this feature for AI-powered applications.',
+  },
+  {
+    title: 'Oracle Cloud Infrastructure AI Services',
+    description: 'New AI and machine learning services available on Oracle Cloud',
+    category: 'cloud',
+    sourceType: 'announcement',
+    url: 'https://www.oracle.com/cloud/ai-services/',
+    publishedDate: new Date('2026-04-01'),
+    content: 'Oracle Cloud Infrastructure now offers comprehensive AI and machine learning services to help enterprises build intelligent applications at scale.',
+  },
+  {
+    title: 'Getting Started with Oracle Fusion HCM',
+    description: 'Comprehensive guide to implementing Oracle Fusion Human Capital Management',
+    category: 'fusion',
+    sourceType: 'tutorial',
+    url: 'https://blogs.oracle.com/applications/getting-started-oracle-fusion-hcm/',
+    publishedDate: new Date('2026-03-28'),
+    content: 'This comprehensive guide walks you through implementing Oracle Fusion HCM, covering everything from initial setup to advanced configurations.',
+  },
+  {
+    title: 'Oracle Database 26ai Performance Benchmarks',
+    description: 'Performance improvements and benchmarks for Oracle Database 26ai',
+    category: '26ai',
+    sourceType: 'whitepaper',
+    url: 'https://www.oracle.com/a/ocom/docs/database/oracle-database-26ai-performance-benchmarks.pdf',
+    publishedDate: new Date('2026-03-25'),
+    content: 'Detailed performance benchmarks showing the significant improvements in Oracle Database 26ai over previous versions, including AI-specific workloads.',
+  },
+];
+
 // Diagrams Data
 const diagrams = [
   {
@@ -172,9 +239,21 @@ try {
   }
   console.log(`✓ Inserted ${diagrams.length} diagrams`);
 
+  console.log('Seeding news feed...');
+  for (const item of newsFeed) {
+    await connection.execute(
+      'INSERT INTO news_feed (title, description, content, category, source_type, source_url, published_date) VALUES (?, ?, ?, ?, ?, ?, ?)',
+      [item.title, item.description, item.content, item.category, item.sourceType, item.url, item.publishedDate]
+    );
+  }
+  console.log(`✓ Inserted ${newsFeed.length} news feed items`);
+
   console.log('✓ Seed data completed successfully!');
 } catch (error) {
   console.error('✗ Error seeding data:', error);
+  process.exit(1);
 } finally {
   await connection.end();
 }
+
+console.log('\n✓ All data seeded successfully!');
